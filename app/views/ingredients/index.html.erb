@@ -1,0 +1,23 @@
+<h1>Ingredients listing page</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Amount</th>
+    <th>Unit</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @ingredients.each do |ingredient| %>
+    <tr>
+      <td><%= ingredient.name %></td>
+      <td><%= ingredient.amount %></td>
+      <td><%= ingredient.unit %></td>
+      <td>Placeholder</td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
