@@ -1,14 +1,14 @@
-<h1>Create a new ingredient</h1>
+<h1>Edit ingredient</h1>
 
 <% if @ingredient.errors.any? %>
-<h2>The following errors prevented the ingredient from being saved</h2>
+  <h2>The following errors prevented the ingredient from being saved</h2>
   <ul>
     <% @ingredient.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
   </ul>
 <% end %>
-<%= form_with scope: :ingredient, url: ingredients_path, local: true do |f| %>
+<%= form_with(model: @ingredient,local: true) do |f| %>
 
   <p>
     <%= f.label :name, "Name" %>
