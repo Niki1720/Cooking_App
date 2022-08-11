@@ -6,7 +6,7 @@
     <th>Name</th>
     <th>Amount</th>
     <th>Unit</th>
-    <th>Action</th>
+    <th colspan="3">Action</th>
   </tr>
   </thead>
 
@@ -16,8 +16,13 @@
       <td><%= ingredient.name %></td>
       <td><%= ingredient.amount %></td>
       <td><%= ingredient.unit %></td>
-      <td>Placeholder</td>
+      <td><%= link_to 'Show', ingredient_path(ingredient) %></td>
+      <td><%= link_to 'Edit', edit_ingredient_path(ingredient)%></td>
+      <td><%= link_to 'Delete', ingredient_path(ingredient), method: :delete, data: {confirm: "Are ypu sure?"} %></td>
     </tr>
   <% end %>
   </tbody>
 </table>
+<p>
+  <%= link_to 'Create new ingredient', new_ingredient_path %>
+</p>

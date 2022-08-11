@@ -1,29 +1,7 @@
 <h1>Edit ingredient</h1>
 
-<% if @ingredient.errors.any? %>
-  <h2>The following errors prevented the ingredient from being saved</h2>
-  <ul>
-    <% @ingredient.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
-<%= form_with(model: @ingredient,local: true) do |f| %>
+<%= render 'form' %>>
 
-  <p>
-    <%= f.label :name, "Name" %>
-    <%= f.text_field :name, placeholder: "Name" %>
-  </p>
-  <p>
-    <%= f.label :amount, "Amount" %>
-    <%= f.text_field :amount, placeholder: "Amount" %>
-  </p>
-  <p>
-    <%= f.label :unit, "Unit" %>
-    <%= f.text_field :unit, placeholder: "Unit" %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<p>
+  <%= link_to 'Cancel and return to ingredients listing', ingredients_path %>
+</p>
