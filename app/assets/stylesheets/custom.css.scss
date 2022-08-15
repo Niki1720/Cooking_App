@@ -1,0 +1,38 @@
+@import 'semantic-ui';
+ body{
+  background-color: cornsilk;
+}
+
+#home {
+  background-image: url('cooking-image.jpeg') !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  height: 625px;
+  margin-top: 20px;
+}
+
+.header {
+  font-size: 72px !important;
+  color: white !important;
+  margin-top: 70px !important;
+  font-weight: normal !important;
+  text-shadow: black 0.1em 0.1em 0.2em !important;
+}
+
+.footer {
+  position: absolute !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: 50px !important;
+}
+
+a {
+  text-decoration: none !important;
+  color: white !important;
+}
+
+#home-button {
+  color: white;
+  margin-top: 150px;
+}
