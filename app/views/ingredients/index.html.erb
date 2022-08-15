@@ -1,28 +1,23 @@
-<h1>Ingredients listing page</h1>
-
-<table>
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th>Amount</th>
-    <th>Unit</th>
-    <th colspan="3">Action</th>
-  </tr>
-  </thead>
-
-  <tbody>
+<div class="ui center aligned container">
+  <h1>Ingredients listing page</h1>
   <% @ingredients.each do |ingredient| %>
-    <tr>
-      <td><%= ingredient.name %></td>
-      <td><%= ingredient.amount %></td>
-      <td><%= ingredient.unit %></td>
-      <td><%= link_to 'Show', ingredient_path(ingredient) %></td>
-      <td><%= link_to 'Edit', edit_ingredient_path(ingredient)%></td>
-      <td><%= link_to 'Delete', ingredient_path(ingredient), method: :delete, data: {confirm: "Are ypu sure?"} %></td>
-    </tr>
+    <div class="ui centered card">
+      <div class="content">
+          <p><%= ingredient.name %></p>
+          <p><%= ingredient.amount %></p>
+          <p><%= ingredient.unit %></p>
+      </div>
+      <div class="extra content">
+        <%= link_to "View", ingredient_path(ingredient), class: "ui positive basic button" %>
+        <%= link_to "Edit", edit_ingredient_path(ingredient), class: "ui primary basic button" %>
+        <%= link_to "Delete", ingredient_path(ingredient), class: "ui negative basic button", method: :delete, data: {confirm: "Are you sure?"} %>
+        <div class="extra content">
+          <p></p>
+          <p> Created <%= time_ago_in_words(ingredient.created_at) %> ago,
+          edited <%= time_ago_in_words(ingredient.updated_at) %> ago</p>
+        </div>
+      </div>
+    </div>
   <% end %>
-  </tbody>
-</table>
-<p>
-  <%= link_to 'Create new ingredient', new_ingredient_path %>
-</p>
+</div>
+

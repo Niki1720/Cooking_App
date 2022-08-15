@@ -1,9 +1,19 @@
-<h1>Showing ingredients details</h1>
+<div class="ui center aligned container">
+  <h2><%= @ingredient.name %></h2>
+    <div class="ui centered card">
+      <div class="content">
+        <p><%= @ingredient.amount %></p>
+        <p><%= @ingredient.unit %></p>
+      </div>
+      <div class="extra content">
+        <%= link_to "Edit", edit_ingredient_path(@ingredient), class: "ui primary basic button" %>
+        <%= link_to "Delete", ingredient_path(@ingredient), class: "ui negative basic button", method: :delete, data: {confirm: "Are you sure?"} %>
+        <div class="extra content">
+          <p></p>
+          <p> Created <%= time_ago_in_words(@ingredient.created_at) %> ago,
+            edited <%= time_ago_in_words(@ingredient.updated_at) %> ago</p>
+        </div>
+      </div>
+    </div>
+</div>
 
-<p><strong>Name: </strong><%= @ingredient.name %></p>
-<p><strong>Amount: </strong><%= @ingredient.amount %></p>
-<p><strong>Unit: </strong><%= @ingredient.unit %></p>
-
-<%= link_to 'Edit', edit_ingredient_path(@ingredient) %> |
-<%= link_to 'Delete', ingredient_path(@ingredient), method: :delete, data: {confirm: "Are ypu sure?"} %> |
-<%= link_to 'Return to ingredients listing', ingredients_path %>

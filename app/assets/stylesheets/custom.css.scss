@@ -1,6 +1,6 @@
 @import 'semantic-ui';
  body{
-  background-color: cornsilk;
+  background-color: #fff7d5;
 }
 
 #home {
@@ -12,7 +12,7 @@
   margin-top: 20px;
 }
 
-.header {
+#logo-app {
   font-size: 72px !important;
   color: white !important;
   margin-top: 70px !important;
@@ -27,7 +27,7 @@
   height: 50px !important;
 }
 
-a {
+.footer a {
   text-decoration: none !important;
   color: white !important;
 }
@@ -35,4 +35,33 @@ a {
 #home-button {
   color: white;
   margin-top: 150px;
+}
+h1{
+  margin-bottom: 20px ;
+}
+.card {
+  box-shadow: 13px 14px 18px -19px rgba(12, 16, 32, 1)!important;
+}
+#form {
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  box-shadow: 13px 14px 18px -19px rgba(12, 16, 32, 1)!important;
+  background-color: #acd9ff;
+
+}
+.message {
+  box-shadow: 13px 14px 18px -19px rgba(12, 16, 32, 1)!important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#button {
+  text-align: center;
+  margin-top: 40px;
+}
+#back {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
