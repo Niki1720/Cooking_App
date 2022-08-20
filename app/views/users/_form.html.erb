@@ -1,5 +1,5 @@
 <div class="ui centered segment" id="form">
-  <%= render 'shared/errors', obj:@user %>
+  <%= render 'shared/errors', obj: @user %>
 
   <%= form_with(model: @user,local: true) do |f| %>
     <div class="ui form">
@@ -16,7 +16,7 @@
         <%= f.password_field :password, placeholder: "Enter your password" %>
       </div>
       <div id="button">
-        <%= f.submit "Sign up", class: "ui white inverted button" %>
+        <%= f.submit(@user.new_record? ? "Sign up" : "Update account", class: "ui white inverted button") %>
       </div>
     </div>
   <% end %>
