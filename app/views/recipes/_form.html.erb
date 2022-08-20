@@ -1,5 +1,5 @@
 <div class="ui centered segment" id="form">
-  <%= render 'shared/errors' %>
+  <%= render 'shared/errors', obj:@recipe %>
 
   <%= form_with(model: @recipe,local: true) do |f| %>
     <div class="ui form">

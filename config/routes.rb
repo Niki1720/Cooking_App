@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
   resources :ingredients
   resources :recipes
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new]
 end
