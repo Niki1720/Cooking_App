@@ -1,0 +1,22 @@
+<div class="ui centered segment" id="form">
+  <%= render 'shared/errors' %>
+
+  <%= form_with(model: @recipe,local: true) do |f| %>
+    <div class="ui form">
+      <div class="field">
+        <%= f.label :name, "Name" %>
+        <%= f.text_field :name, placeholder: "Name" %>
+      </div>
+      <div class="field">
+        <%= f.label :description, "Description" %>
+        <%= f.text_area :description, placeholder: "Description" %>
+      </div>
+      <div id="button">
+        <%= f.submit class: "ui white inverted button" %>
+      </div>
+    </div>
+  <% end %>
+  <div id="back">
+    <%= link_to '[ Cancel and return to ingredients listing ]', recipes_path %>
+  </div>
+</div>
