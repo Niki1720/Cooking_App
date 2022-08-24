@@ -1,0 +1,19 @@
+<div class="ui center aligned container">
+  <h1>Cooking App Users</h1>
+  <% @users.each do |user| %>
+    <div class="ui centered card">
+      <div class="content">
+        <h2><%= link_to user.username, user %></h2>
+        <p><%= pluralize(user.recipes.count, "recipe") %></p>
+      </div>
+      <div class="extra content">
+        <%= link_to "View profile", user, class: "ui positive basic button" %>
+        <%= link_to "Edit profile", edit_user_path(user), class: "ui primary basic button" %>
+        <div class="extra content">
+          <p></p>
+          <p> Joined <%= time_ago_in_words(user.created_at) %> ago </p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,24 @@
+ <% @recipes.each do |recipe| %>
+    <div class="ui centered card">
+      <h3>
+        <% if recipe.user %>
+        by <%= link_to recipe.user.username, user_path(recipe.user) %>
+        <% end %>
+      </h3>
+      <div class="content">
+        <p><%= recipe.name %></p>
+        <p><%= recipe.description %></p>
+      </div>
+      <div class="extra content">
+        <%= link_to "View", recipe_path(recipe), class: "ui positive basic button" %>
+        <%= link_to "Edit", edit_recipe_path(recipe), class: "ui primary basic button" %>
+        <%= link_to "Delete", recipe_path(recipe), class: "ui negative basic button", method: :delete, data: {confirm: "Are you sure?"} %>
+        <div class="extra content">
+          <p></p>
+          <p> Created <%= time_ago_in_words(recipe.created_at) %> ago,
+            edited <%= time_ago_in_words(recipe.updated_at) %> ago</p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
