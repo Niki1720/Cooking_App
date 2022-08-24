@@ -1,5 +1,12 @@
 <div class="ui center aligned container">
   <h1>Recipes listing page</h1>
+
+  <div class="flickr_pagination">
+    <%= will_paginate @recipes, :container => false %>
+  </div>
   <%= render 'recipe' %>
+  <div class="flickr_pagination">
+    <%= will_paginate @recipes, :container => false %>
+  </div>
 </div>
 

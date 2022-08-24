@@ -1,5 +1,10 @@
 <div class="ui center aligned container">
   <h1>Cooking App Users</h1>
+
+  <div class="flickr_pagination">
+    <%= will_paginate @users, :container => false %>
+  </div>
+
   <% @users.each do |user| %>
     <div class="ui centered card">
       <div class="content">
@@ -16,4 +21,7 @@
       </div>
     </div>
   <% end %>
+  <div class="flickr_pagination">
+    <%= will_paginate @users, :container => false %>
+  </div>
 </div>

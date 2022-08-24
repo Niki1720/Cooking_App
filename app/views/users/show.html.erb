@@ -3,6 +3,14 @@
 
   <%= link_to "Edit your profile", edit_user_path(@user), class: "ui primary basic button"  %>
 
+  <div class="flickr_pagination">
+    <%= will_paginate @recipes, :container => false %>
+  </div>
+
   <%= render 'recipes/recipe' %>
+
+  <div class="flickr_pagination">
+    <%= will_paginate @recipes, :container => false %>
+  </div>
 </div>
 
