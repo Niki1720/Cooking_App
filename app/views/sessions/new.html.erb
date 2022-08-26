@@ -1,0 +1,24 @@
+<div class="ui center aligned container">
+  <h1>Log in</h1>
+</div>
+
+<div class="ui centered segment" id="form">
+  <%= form_with(scope: :session, url: login_path, local: true) do |f| %>
+    <div class="ui form">
+      <div class="field">
+        <%= f.label :email, "Email" %>
+        <%= f.email_field :email, placeholder: "Enter your email address" %>
+      </div>
+      <div class="field">
+        <%= f.label :password, "Password" %>
+        <%= f.password_field :password, placeholder: "Enter your password" %>
+      </div>
+      <div id="button">
+        <%= f.submit "Log in", class: "ui white inverted button" %>
+      </div>
+    </div>
+  <% end %>
+  <div id="back">
+    <%= link_to '[ Cancel and return to ingredients listing ]', recipes_path %>
+  </div>
+</div>
