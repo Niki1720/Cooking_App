@@ -1,12 +1,16 @@
 <div class="ui center aligned container">
-  <h2><%= @recipe.name %></h2>
+  <h1><%= @recipe.name %></h1>
   <div class="ui centered card">
     <div class="content">
-      <p><%= @recipe.description %></p>
+      <div id="recipe">
+        <%= simple_format(@recipe.description) %>
+      </div>
     </div>
     <div class="extra content">
-      <%= link_to "Edit", edit_recipe_path(@recipe), class: "ui primary basic button" %>
-      <%= link_to "Delete", recipe_path(@recipe), class: "ui negative basic button", method: :delete, data: {confirm: "Are you sure?"} %>
+      <% if logged_in? && @recipe.user == current_user %>
+          <%= link_to "Edit", edit_recipe_path(@recipe), class: "ui primary basic button" %>
+          <%= link_to "Delete", recipe_path(@recipe), class: "ui negative basic button", method: :delete, data: {confirm: "Are you sure?"} %>
+        <% end %>
       <div class="extra content">
         <p></p>
         <p> Created <%= time_ago_in_words(@recipe.created_at) %> ago,

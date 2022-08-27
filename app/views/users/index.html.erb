@@ -13,7 +13,9 @@
       </div>
       <div class="extra content">
         <%= link_to "View profile", user, class: "ui positive basic button" %>
-        <%= link_to "Edit profile", edit_user_path(user), class: "ui primary basic button" %>
+          <% if logged_in? && user == current_user %>
+            <%= link_to "Edit profile", edit_user_path(user), class: "ui primary basic button" %>
+          <% end %>
         <div class="extra content">
           <p></p>
           <p> Joined <%= time_ago_in_words(user.created_at) %> ago </p>
