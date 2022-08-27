@@ -1,6 +1,7 @@
  <% @recipes.each do |recipe| %>
     <div class="ui centered card">
       <h3>
+        <p></p>
         <% if recipe.user %>
         by <%= link_to recipe.user.username, user_path(recipe.user) %>
         <% end %>

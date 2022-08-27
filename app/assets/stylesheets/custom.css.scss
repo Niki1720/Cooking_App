@@ -21,7 +21,7 @@
 }
 
 .footer {
-  position: absolute !important;
+  position: fixed !important;
   bottom: 0 !important;
   width: 100% !important;
   height: 50px !important;
@@ -41,6 +41,8 @@ h1{
 }
 .card {
   box-shadow: 13px 14px 18px -19px rgba(12, 16, 32, 1)!important;
+  margin-bottom: 40px !important;
+
 }
 #form {
   margin-left: auto;
@@ -48,6 +50,7 @@ h1{
   width: 500px;
   box-shadow: 13px 14px 18px -19px rgba(12, 16, 32, 1)!important;
   background-color: #acd9ff;
+
 
 }
 .message {
@@ -69,6 +72,8 @@ h1{
 /*pagination styling */
 
 .flickr_pagination {
+  margin-bottom: 20px;
+  margin-top: 20px;
   text-align: center;
   padding: 0.3em;
   cursor: default; }
