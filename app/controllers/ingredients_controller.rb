@@ -1,5 +1,6 @@
 class IngredientsController < ApplicationController
   before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
+  before_action :require_user, except: [:show, :index]
 
   def index
     @ingredients = Ingredient.paginate(page: params[:page], per_page: 10)
