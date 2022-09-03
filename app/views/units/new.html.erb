@@ -1,0 +1,25 @@
+<div class="ui center aligned container">
+  <h1>Create new unit</h1>
+</div>
+<div class="ui centered segment" id="form">
+  <%= render 'shared/errors', obj: @unit %>
+
+  <%= form_with(model: @unit,local: true) do |f| %>
+    <div class="ui form">
+      <div class="field">
+        <%= f.label :name, "Name" %>
+        <%= f.text_field :name, placeholder: "Enter a name" %>
+      </div>
+      <div class="field">
+        <%= f.label :shortcut_name, "Shortcut name" %>
+        <%= f.text_field :shortcut_name, placeholder: "Enter shortcut name" %>
+      </div>
+      <div id="button">
+        <%= f.submit class: "ui white inverted button" %>
+      </div>
+    </div>
+  <% end %>
+  <div id="back">
+    <%= link_to '[ Cancel and return to ingredients listing ]', units_path %>
+  </div>
+</div>

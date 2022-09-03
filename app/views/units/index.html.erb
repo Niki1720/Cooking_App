@@ -1,0 +1,33 @@
+<div class="ui center aligned container">
+  <h1>Units listing page</h1>
+
+  <div class="flickr_pagination">
+    <%= will_paginate @units, :container => false %>
+  </div>
+  <% if logged_in? && current_user.admin?%>
+    <% @units.each do |unit| %>
+      <div class="ui centered card">
+        <div class="content">
+          <h2><%= link_to unit.name, unit_path(unit) %></h2>
+          <p><%= unit.shortcut_name %></p>
+        </div>
+        <div class="extra content">
+          <%= link_to "View", unit_url(unit), class: "ui positive basic button" %>
+          <%= link_to "Edit", edit_unit_path(unit), class: "ui primary basic button" %>
+          <%= link_to "Delete", unit_path(unit), class: "ui negative basic button", method: :delete, data: { confirm: "Are you sure?" } %>
+          <div class="extra content">
+            <p></p>
+            <p> Created <%= time_ago_in_words(unit.created_at) %> ago,
+              edited <%= time_ago_in_words(unit.updated_at) %> ago</p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+  <div class="flickr_pagination">
+    <%= will_paginate @units, :container => false %>
+  </div>
+
+</div>
+
