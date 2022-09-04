@@ -11,6 +11,11 @@
         <%= f.label :description, "Description" %>
         <%= f.text_area :description, placeholder: "Description" %>
       </div>
+      <div class="field">
+        <%= f.label :ingredient, "Ingredients" %>
+        <%= f.collection_select(:ingredient_ids, Ingredient.all, :id, :name,
+                                {:prompt => "Please select a ingredients"}, {:multiple => true, class: "ui checkbox "}) %>
+      </div>
       <div id="button">
         <%= f.submit class: "ui white inverted button" %>
       </div>
