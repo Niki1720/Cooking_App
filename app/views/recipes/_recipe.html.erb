@@ -8,7 +8,9 @@
       </h3>
       <div class="content">
         <h2><%= link_to recipe.name, recipe_path(recipe)%></h2>
-        <p><%= recipe.description %></p>
+        <% if recipe.ingredients.any? %>
+          <%= render recipe.ingredients %>
+        <% end %>
       </div>
       <div class="extra content">
         <%= link_to "View", recipe_path(recipe), class: "ui positive basic button" %>

@@ -1,0 +1,17 @@
+<div class="ui center aligned container">
+  <h2><%= @ingredient_name.name %></h2>
+
+  <div class="ui centered card">
+    <div class="extra content">
+      <% if logged_in? && current_user.admin? %>
+      <%= link_to "Edit", edit_ingredient_name_path(@ingredient_name), class: "ui primary basic button" %>
+      <%= link_to "Delete", ingredient_name_path(@ingredient_name), class: "ui negative basic button", method: :delete, data: {confirm: "Are you sure?"} %>
+      <% end %>
+      <div class="extra content">
+        <p></p>
+        <p> Created <%= time_ago_in_words(@ingredient_name.created_at) %> ago,
+          edited <%= time_ago_in_words(@ingredient_name.updated_at) %> ago</p>
+      </div>
+    </div>
+  </div>
+</div>

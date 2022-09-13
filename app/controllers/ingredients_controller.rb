@@ -3,7 +3,7 @@ class IngredientsController < ApplicationController
   before_action :require_user, except: [:show, :index]
 
   def index
-    @ingredients = Ingredient.paginate(page: params[:page], per_page: 10)
+    @ingredients = Ingredient.paginate(page: params[:page], per_page: 5)
   end
   def show
   end
@@ -46,7 +46,7 @@ class IngredientsController < ApplicationController
   end
 
   def ingredient_params
-    params.require(:ingredient).permit(:name, :amount)
+    params.require(:ingredient).permit(:name, :amount, unit_ids: [])
   end
 
 end

@@ -1,0 +1,20 @@
+<div class="ui center aligned container">
+  <h1>Ingredients listing page</h1>
+  <% @ingredient_names.each do |ingredient| %>
+    <div class="ui centered card">
+      <div class="content">
+        <p><%= ingredient.name %></p>
+      </div>
+      <div class="extra content">
+        <%= link_to "View", ingredient_name_path(ingredient), class: "ui positive basic button" %>
+        <%= link_to "Edit", edit_ingredient_name_path(ingredient), class: "ui primary basic button" %>
+        <%= link_to "Delete", ingredient_name_path(ingredient), class: "ui negative basic button", method: :delete, data: {confirm: "Are you sure?"} %>
+        <div class="extra content">
+          <p></p>
+          <p> Created <%= time_ago_in_words(ingredient.created_at) %> ago,
+            edited <%= time_ago_in_words(ingredient.updated_at) %> ago</p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

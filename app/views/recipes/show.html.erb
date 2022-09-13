@@ -3,14 +3,19 @@
   <div class="ui centered card">
     <div class="content">
       <div id="recipe">
+        <h3>Ingredients</h3>
+        <% @recipe.ingredients.each do |ingredient| %>
+          <div class="ui green horizontal label"><%= ingredient.name %> <%= number_with_precision ingredient.amount, :precision => 0 %> <%= ingredient.unit.name %></div>
+        <% end %>
+        <h3>Description</h3>
         <%= simple_format(@recipe.description) %>
       </div>
     </div>
     <div class="extra content">
       <% if logged_in? && (@recipe.user == current_user || current_user.admin?) %>
-          <%= link_to "Edit", edit_recipe_path(@recipe), class: "ui primary basic button" %>
-          <%= link_to "Delete", recipe_path(@recipe), class: "ui negative basic button", method: :delete, data: {confirm: "Are you sure?"} %>
-        <% end %>
+        <%= link_to "Edit", edit_recipe_path(@recipe), class: "ui primary basic button" %>
+        <%= link_to "Delete", recipe_path(@recipe), class: "ui negative basic button", method: :delete, data: { confirm: "Are you sure?" } %>
+      <% end %>
       <div class="extra content">
         <p></p>
         <p> Created <%= time_ago_in_words(@recipe.created_at) %> ago,

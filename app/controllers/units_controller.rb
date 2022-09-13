@@ -6,6 +6,18 @@ class UnitsController < ApplicationController
     @unit = Unit.new
   end
 
+  def edit
+  end
+
+  def update
+    if @unit.update(unit_params)
+      flash[:notice] = "Unit was created successfully."
+      redirect_to @unit
+    else
+      render 'edit'
+    end
+  end
+
   def index
     @units = Unit.paginate(page: params[:page], per_page: 3)
   end

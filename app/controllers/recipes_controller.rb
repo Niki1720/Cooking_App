@@ -11,6 +11,9 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+    @ingredients = Ingredient.all
+    @units = Unit.all
+    @ingredient_names = IngredientName.all
   end
 
   def edit
@@ -48,7 +51,7 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:name, :description, ingredient_ids:[])
+    params.require(:recipe).permit(:name, :description, ingredients_attributes: [:name, :amount, :unit_id, :_destroy])
   end
 
   def require_same_user

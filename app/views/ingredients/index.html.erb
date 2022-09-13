@@ -1,10 +1,14 @@
 <div class="ui center aligned container">
   <h1>Ingredients listing page</h1>
+
+  <div class="flickr_pagination">
+    <%= will_paginate @ingredients, :container => false %>
+  </div>
+
   <% @ingredients.each do |ingredient| %>
     <div class="ui centered card">
       <div class="content">
           <p><%= ingredient.name %></p>
-          <p><%= ingredient.amount %></p>
       </div>
       <div class="extra content">
         <%= link_to "View", ingredient_path(ingredient), class: "ui positive basic button" %>
@@ -18,5 +22,10 @@
       </div>
     </div>
   <% end %>
+
+  <div class="flickr_pagination">
+    <%= will_paginate @recipes, :container => false %>
+  </div>
+
 </div>
 

@@ -1,0 +1,17 @@
+<div class='nested-fields'>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.select :name, collection: IngredientName.all.pluck(:name) %>
+  </div>
+  <div class="field">
+    <%= f.label :amount %>
+    <%= f.text_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label :unit %>
+    <%= f.collection_select(:unit_id, Unit.all, :id, :name, { multiple: true }) %>
+  </div>
+  <div id="button">
+  <%= link_to_remove_association "remove ingredient", f, class: "mini black ui button" %>
+  </div>
+</div>

@@ -1,27 +1,30 @@
 <div class="ui centered segment" id="form">
   <%= render 'shared/errors', obj:@recipe %>
 
-  <%= form_with(model: @recipe,local: true) do |f| %>
-    <div class="ui form">
+  <div class="ui form">
+    <%= form_for @recipe do |f| %>
       <div class="field">
-        <%= f.label :name, "Name" %>
-        <%= f.text_field :name, placeholder: "Name" %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
       </div>
       <div class="field">
-        <%= f.label :description, "Description" %>
-        <%= f.text_area :description, placeholder: "Description" %>
+        <%= f.label :description %>
+        <%= f.text_area :description %>
       </div>
-      <div class="field">
-        <%= f.label :ingredient, "Ingredients" %>
-        <%= f.collection_select(:ingredient_ids, Ingredient.all, :id, :name,
-                                {:prompt => "Please select a ingredients"}, {:multiple => true, class: "ui checkbox "}) %>
-      </div>
+        <h3 id='ingredients'>Ingredients</h3>
+        <%= f.fields_for :ingredients do |ingredient| %>
+          <%= render 'ingredient_fields', :f => ingredient %>
+        <% end %>
+        <div id='button'>
+          <%= link_to_add_association 'add ingredient', f, :ingredients, class: "mini black ui button" %>
+        </div>
       <div id="button">
         <%= f.submit class: "ui white inverted button" %>
       </div>
-    </div>
-  <% end %>
-  <div id="back">
-    <%= link_to '[ Cancel and return to ingredients listing ]', recipes_path %>
+      <div id="back">
+        <%= link_to '[ Cancel and return to recipes listing ]', recipes_path %>
+      </div>
+      </div>
+    <% end %>
   </div>
 </div>

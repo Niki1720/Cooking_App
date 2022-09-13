@@ -1,0 +1,15 @@
+<div class="ui centered segment" id="form">
+  <%= render 'shared/errors', obj:@ingredient_name %>
+
+  <%= form_with(model: @ingredient_name,local: true) do |f| %>
+    <div class="ui form">
+      <div class="field">
+        <%= f.label :name, "Name" %>
+        <%= f.text_field :name, placeholder: "Name" %>
+      </div>
+      <div id="button">
+        <%= f.submit class: "ui white inverted button" %>
+      </div>
+    </div>
+  <% end %>
+</div>
