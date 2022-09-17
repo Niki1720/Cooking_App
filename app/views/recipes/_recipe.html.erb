@@ -12,7 +12,7 @@
       </div>
       <div class="extra content">
         <%= link_to "View", recipe_path(recipe), class: "ui positive basic button" %>
-          <% if logged_in? && (recipe.user == current_user || current_user.admin?) %>
+          <% if user_signed_in? && (recipe.user == current_user || current_user.admin?) %>
             <%= link_to "Edit", edit_recipe_path(recipe), class: "ui primary basic button" %>
             <%= link_to "Delete", recipe_path(recipe), class: "ui negative basic button", method: :delete, data: { confirm: "Are you sure?" } %>
           <% end %>
