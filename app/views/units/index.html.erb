@@ -4,7 +4,7 @@
   <div class="flickr_pagination">
     <%= will_paginate @units, :container => false %>
   </div>
-  <% if logged_in? && current_user.admin?%>
+  <% if user_signed_in? && current_user.admin?%>
     <% @units.each do |unit| %>
       <div class="ui centered card">
         <div class="content">
