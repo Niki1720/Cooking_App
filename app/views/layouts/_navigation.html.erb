@@ -4,14 +4,14 @@
   <div class="ui dropdown item">
     Recipes <i class="dropdown icon"></i>
       <div class="menu">
-        <% if logged_in? %>
+        <% if user_signed_in? %>
           <%= link_to "Add recipe", new_recipe_path, class: "item" %>
         <% end %>
         <%= link_to "View recipes", recipes_path, class: "item" %>
       </div>
   </div>
   <%= link_to "Users", users_path, class: "item" %>
-  <% if logged_in? && current_user.admin?%>
+  <% if user_signed_in? && current_user.admin?%>
   <div class="ui dropdown item">
     Units <i class="dropdown icon"></i>
     <div class="menu">
@@ -21,19 +21,19 @@
   </div>
   <% end %>
   <div class="right menu">
-    <% if logged_in? %>
+    <% if user_signed_in? %>
       <div class="ui dropdown item">
-        <%= "(Admin)" if current_user.admin? %> Profile [<%= current_user.username %>]<i class="dropdown icon"></i>
+        <%= "(Admin)" if current_user.admin? %> Profile <%= current_user.username %><i class="dropdown icon"></i>
         <div class="menu">
           <%= link_to "View Profile", user_path(current_user), class: "item" %>
-          <%= link_to "Log out", logout_path, class: "item", method: :delete %>
+          <%= link_to "Log out", destroy_user_session_path, class: "item", method: :delete %>
         </div>
     <% else %>
-      <%= link_to "Log in", login_path, class: "item" %>
+      <%= link_to "Log in", new_user_session_path, class: "item" %>
       <% end %>
       </div>
     <div class="item">
-      <%= link_to "Sign Up", signup_path, class: "ui primary button" %>
+      <%= link_to "Sign Up", new_user_registration_path, class: "ui primary button" %>
     </div>
   </div>
 </div>
