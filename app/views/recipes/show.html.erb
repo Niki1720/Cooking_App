@@ -12,17 +12,10 @@
       </div>
     </div>
     <div class="extra content">
-<<<<<<< HEAD
-      <% if logged_in? && (@recipe.user == current_user || current_user.admin?) %>
-        <%= link_to "Edit", edit_recipe_path(@recipe), class: "ui primary basic button" %>
-        <%= link_to "Delete", recipe_path(@recipe), class: "ui negative basic button", method: :delete, data: { confirm: "Are you sure?" } %>
-      <% end %>
-=======
       <% if user_signed_in? && (@recipe.user == current_user || current_user.admin?) %>
           <%= link_to "Edit", edit_recipe_path(@recipe), class: "ui primary basic button" %>
           <%= link_to "Delete", recipe_path(@recipe), class: "ui negative basic button", method: :delete, data: {confirm: "Are you sure?"} %>
         <% end %>
->>>>>>> email
       <div class="extra content">
         <p></p>
         <p> Created <%= time_ago_in_words(@recipe.created_at) %> ago,
