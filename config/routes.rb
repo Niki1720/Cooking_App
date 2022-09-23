@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :images
-  devise_for :users
+  devise_for :users, controllers: { confirmations: 'users/confirmations' }
   root 'pages#home'
   get 'about', to: 'pages#about'
   resources :ingredients
