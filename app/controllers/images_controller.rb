@@ -38,6 +38,7 @@ class ImagesController < ApplicationController
   # PATCH/PUT /images/1 or /images/1.json
   def update
     respond_to do |format|
+      @image.user = current_user
       if @image.update(image_params)
         format.html { redirect_to image_url(@image), notice: "Image was successfully updated." }
         format.json { render :show, status: :ok, location: @image }

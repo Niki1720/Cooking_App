@@ -13,15 +13,15 @@
       </div>
       <div class="extra content">
         <%= link_to "View profile", user, class: "ui positive basic button" %>
-          <% if user_signed_in? %>
-            <% if user == current_user %>
-              <%= link_to "Edit profile", edit_user_registration_path(user), class: "ui primary basic button" %>
+        <% if user_signed_in? %>
+          <% if user == current_user %>
+            <%= link_to "Edit profile", edit_user_registration_path(user), class: "ui primary basic button" %>
           <% end %>
-            <% if current_user.admin? %>
-              <%= link_to "Delete user", user_path(user), method: :delete, class: "ui negative basic button",
-                          data: {confirm:"Are you sure you want delete the user account and associated recipes?"}%>
-            <% end %>
+          <% if current_user.admin? %>
+            <%= link_to "Delete user", user_path(user), method: :delete, class: "ui negative basic button",
+                        data: { confirm: "Are you sure you want delete the user account and associated recipes?" } %>
           <% end %>
+        <% end %>
         <div class="extra content">
           <p></p>
           <p> Joined <%= time_ago_in_words(user.created_at) %> ago </p>

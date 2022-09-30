@@ -6,16 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="8225edbf-e485-444b-b901-2bdd504496f9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/confirmations_controller.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/images_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/images_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/application_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/application_helper.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/confirmations/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/confirmations/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/spring" beforeDir="false" afterPath="$PROJECT_DIR$/bin/spring" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/environment.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environment.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/environments/development.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/development.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/environments/production.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/production.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20220915161336_add_devise_to_users.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20220915161336_add_devise_to_users.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/uploaders/picture_uploader.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/uploaders/picture_uploader.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/images/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/images/_form.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/images/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/images/edit.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/images/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/images/show.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/recipes/show.html.erb.orig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/users/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/_form.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/users/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/edit.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/users/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/users/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -360,7 +366,7 @@
       <workItem from="1663866770949" duration="2007000" />
       <workItem from="1663942507721" duration="2067000" />
       <workItem from="1664025582945" duration="49000" />
-      <workItem from="1664027528584" duration="3838000" />
+      <workItem from="1664027528584" duration="32058000" />
     </task>
     <servers />
   </component>
@@ -379,6 +385,6 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/App_Cooking@Development__App_Cooking.rcov" NAME="Development: App_Cooking Coverage Results" MODIFIED="1664033192543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="App_Cooking" />
+    <SUITE FILE_PATH="coverage/App_Cooking@Development__App_Cooking.rcov" NAME="Development: App_Cooking Coverage Results" MODIFIED="1664479741856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="App_Cooking" />
   </component>
 </project>

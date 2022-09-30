@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def show
     @recipes = @user.recipes.paginate(page: params[:page], per_page: 5)
+    @image = @user.image
   end
 
   def index

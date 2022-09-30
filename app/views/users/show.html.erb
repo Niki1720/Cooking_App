@@ -1,9 +1,18 @@
 <div class="ui center aligned container">
   <h1><%= @user.username %>'s profile</h1>
-    <% if user_signed_in? && @user == current_user %>
-      <%= link_to "Edit your profile", edit_user_path(@user), class: "ui primary basic button"  %> <br> <p></p>
-      <%= link_to "Delete profile", user_path(current_user), method: :delete, data: { confirm: "Are you sure?" }, class: "ui negative basic button"  %>
-    <% end %>
+  <% if user_signed_in? && @user == current_user %>
+    <div class="image_wrapper">
+      <div class="image_tag">
+        <%=avatar_for(current_user) %>
+      </div>
+    </div>
+    <p></p>
+    <%= link_to "Edit your username", edit_user_path(@user), class: "ui primary basic button" %> <br>
+    <p></p>
+    <%= link_to "Edit your profile", edit_user_registration_path(@user), class: "ui primary basic button" %> <br>
+    <p></p>
+    <%= link_to "Delete profile", user_path(current_user), method: :delete, data: { confirm: "Are you sure?" }, class: "ui negative basic button" %>
+  <% end %>
   <div class="flickr_pagination">
     <%= will_paginate @recipes, :container => false %>
   </div>

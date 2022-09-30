@@ -1,6 +1,14 @@
-<h1>Editing Image</h1>
+<div class="ui center aligned container">
+  <h1>Editing Image</h1>
+</div>
+<div class="image_wrapper">
 
+  <div class="image_tag">
+    <%= image_tag (@image.picture.url) if @image.picture? %>
+  </div>
+</div>
 <%= render 'form', image: @image %>
-
-<%= link_to 'Show', @image %> |
-<%= link_to 'Back', images_path %>
+<div class="ui center aligned container">
+  <%= link_to 'Show', @image %> |
+  <%= link_to 'Back', images_path %>
+</div>

@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
-  helper_method :current_user, :logged_in?
 
   def require_user
     if !user_signed_in?
@@ -8,4 +7,5 @@ class ApplicationController < ActionController::Base
       redirect_to new_user_session_path
     end
   end
+
 end
