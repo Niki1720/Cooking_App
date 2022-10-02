@@ -3,7 +3,8 @@
   <% if user_signed_in? && @user == current_user %>
     <div class="image_wrapper">
       <div class="image_tag">
-        <%=avatar_for(current_user) %>
+        <%= avatar_for(@user) %>
+        <%#=avatar_for(current_user) %>
       </div>
     </div>
     <p></p>

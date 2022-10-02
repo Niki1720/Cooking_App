@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_22_164100) do
+ActiveRecord::Schema.define(version: 2022_09_30_121316) do
 
   create_table "images", force: :cascade do |t|
     t.string "picture"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 2022_09_22_164100) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "avatar"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
